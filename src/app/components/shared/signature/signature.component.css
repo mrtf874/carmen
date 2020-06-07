@@ -1,0 +1,13 @@
+.signature-card {
+  margin: auto;
+  text-align: center;
+}
+
+.keypad {
+  width: 100%;
+  text-align: center;
+}
+
+.keypad .button-clean {
+  margin: 10px 0px;
+}

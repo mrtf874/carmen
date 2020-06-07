@@ -1,0 +1,50 @@
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
+ng-template.confirmation {
+  margin: 60px 0px;
+}
+.modal-body {
+  text-align: justify;
+  overflow-x: hidden;
+}
+.input-form-control.long {
+  max-width: 300px;
+}
+.input-form-control.short {
+  max-width: 50px;
+}
+mat-radio-button.example-margin {
+  padding: 0 3px;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+.page {
+  page-break-before: always;
+}
+.form-inline.ceg {
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .input-form-control.long {
+    width: 200px;
+  }
+}
+@media (max-width: 1999px) {
+  .form-inline.ceg .form-group {
+    width: 120px;
+  }
+}
+@media (max-width: 1000px) {
+  .form-inline.ceg .form-group {
+      width: 70px;
+  }
+}

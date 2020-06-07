@@ -1,0 +1,11 @@
+.ceg-bg {
+  height: 100%;
+  margin-top: 7%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.card-body {
+  margin-top: 7vw;
+}

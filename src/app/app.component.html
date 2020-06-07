@@ -1,0 +1,6 @@
+<ceg-navbar></ceg-navbar>
+<div class="ceg-body">
+  <ceg-login *ngIf="!constants.STATE && constants.STATE_FIRST"></ceg-login>
+  <router-outlet></router-outlet>
+</div>
+<ceg-footer></ceg-footer>

@@ -1,0 +1,46 @@
+<div class="ceg-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card mb-6">
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <img src="../../../../assets/img/tower.jpg" class="card-img" alt="">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">Inicio de sessión</h5>
+                <form [formGroup]="profileForm" (ngSubmit)="onFormSubmit(profileForm.value)">
+                  <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp"
+                      placeholder="Ingresa tu correo" required minlength="3" maxlength="30" formControlName="email">
+                    <small id="emailHelp" class="form-text text-muted">No compartas tu correo electrónico con
+                      nadie.</small>
+                    <mat-error>
+                      <span *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched">
+                        {{constant.ENTRY_ERROR}}
+                      </span>
+                    </mat-error>
+                  </div>
+                  <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Contraseña"
+                      required minlength="3" maxlength="30" formControlName="password">
+                    <mat-error>
+                      <span *ngIf="!profileForm.get('password').valid && profileForm.get('password').touched">
+                        {{constant.ENTRY_ERROR}}
+                      </span>
+                    </mat-error>
+                  </div>
+                  <button type="submit" class="btn btn-primary" [disabled]="profileForm.status !== constant.STATE_CORRECT_FORM">Iniciar sessión</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ceg-spinner *ngIf="spinner"></ceg-spinner>

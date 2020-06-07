@@ -1,0 +1,20 @@
+<div class="ceg-navbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fade-in">
+    <a [href]="constants.LINK_MAIN_PAGE"><img class="logo" src="../../../../assets/img/logo.png" alt=""></a>
+    <button  *ngIf="constants.STATE" class="navbar-toggler" type="button"data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="constants.STATE">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngFor="let item of constants.NAVBAR_ITEMS; index as i">
+          <a class="nav-link fade-in" href="" [routerLink]="[item.link]" routerLinkActive="active">
+            {{item.text}}<span *ngIf="i == constants.FIRST_ITEM_NAVBAR" class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="logOut()">{{constants.TEXT_BUTTON_NAVBAR}}</button>
+      </div>
+    </div>
+  </nav>
+</div>

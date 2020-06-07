@@ -1,0 +1,76 @@
+<h2 mat-dialog-title>Información de {{client.names}}</h2>
+<mat-dialog-content class="mat-typography" *ngIf="client">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <h4><strong>Nombre:</strong></h4>
+      <p>{{client.names}}</p>
+      <h4><strong>Apellidos:</strong></h4>
+      <p>{{client.surnames}}</p>
+      <h4><strong>Correo:</strong></h4>
+      <p>{{client.email}}</p>
+      <h4><strong>Teléfono:</strong></h4>
+      <p>{{client.mobile}}</p>
+      <h4><strong>Celular:</strong></h4>
+      <p>{{client.phone}}</p>
+      <h4><strong>Fecha de nacimiento</strong></h4>
+      <p>{{client.birthday}}</p>
+      <h4><strong>Ocupación</strong></h4>
+      <p>{{client.job}}</p>
+      <h4><strong>Forma de contacto:</strong></h4>
+      <p>{{client.contact_form.description}}</p>
+      <h4><strong>Comentarios:</strong></h4>
+      <p>{{client.notes}}</p>
+      <h4><strong>Dirección:</strong></h4>
+      <p>{{client.address}}</p>
+    </div>
+    <div class="form-group col-md-6">
+      <h4><strong>Foto de usuario:</strong></h4>
+      <img style="max-width: 300px;" [src]="picture | safeHtml: 'url'"*ngIf="picture"  alt="Usuario">
+      <h4><strong>Ciudad:</strong></h4>
+      <p>{{client.city.description}}</p>
+      <h4><strong>Estado:</strong></h4>
+      <p>{{client.city.state.description}}</p>
+      <h4><strong>País:</strong></h4>
+      <p>{{client.city.state.country.description}}</p>
+      <h4><strong>Código postal:</strong></h4>
+      <p>{{client.postal_code}}</p>
+    </div>
+  </div>
+  <div class="form-row photo-ceg">
+    <div class="form-group col-md-6" *ngIf="imgBefore">
+      <h4><strong>Antes:</strong></h4>
+      <img [src]="imgBefore | safeHtml: 'url'" alt="Antes">
+    </div>
+    <div class="form-group col-md-6" *ngIf="imgAfter">
+      <h4><strong>Después:</strong></h4>
+      <img [src]="imgAfter | safeHtml: 'url'" alt="Después">
+    </div>
+  </div>
+  <table class="table" *ngIf="client.quotes">
+    <caption>Citas del usuario</caption>
+    <thead class="table-success">
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Procedimiento</th>
+        <th scope="col">Esteticista</th>
+        <th scope="col">Notas</th>
+        <th scope="col">Fotografías</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quote of client.quotes">
+        <th scope="row">{{ quote.date }}</th>
+        <td>{{quote.procedure.description}}</td>
+        <td>{{quote.employee.names}} {{quote.employee.surnames}}</td>
+        <td>{{quote.notes}}</td>
+        <td class="option-icon">
+          <a href="javascript:void(0);" (click)="viewDetail(quote.picture_before, quote.picture_after)"><img
+              src="../../../../assets/img/photo.svg" alt="View"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

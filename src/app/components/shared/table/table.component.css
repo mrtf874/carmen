@@ -1,0 +1,32 @@
+mat-form-field.configuration-table {
+  padding: 0 5px;
+  width: auto;
+}
+table.table.table-striped.table-ceg {
+  text-align: center;
+}
+table.table.table-striped.table-ceg {
+  text-align: center;
+}
+table.table.table-striped.table-ceg .option-icon {
+  cursor: pointer;
+}
+table.table.table-striped.table-ceg .option-icon > a {
+  padding: 0 5px;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+@media (max-width: 768px) {
+  table.table.table-striped.table-ceg td, table.table.table-striped.table-ceg th {
+    padding-top: 0.75rem;
+    padding-right: 0rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0rem;
+  }
+}
+@media (max-width: 352px) {
+  table.table.table-striped.table-ceg .option-icon > a {
+    padding: 0 15px;
+  }
+}

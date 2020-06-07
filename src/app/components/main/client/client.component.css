@@ -1,0 +1,25 @@
+.form-card {
+  margin: auto;
+  width: 90%;
+}
+.form-card .form-client {
+  display: flex;
+  flex-direction: column;
+}
+.form-card .form-client > *, .min-col > * {
+  width: 100%;
+}
+.custom-file {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.submit {
+  text-align: center;
+}
+.table-quotes {
+  overflow: auto;
+  width: 100%;
+}
+table.table-quotes > tbody {
+  vertical-align: bottom;
+}

@@ -1,0 +1,85 @@
+<h2 mat-dialog-title>Añadir cita</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="form-card card-client">
+    <div class="card-body">
+      <form [formGroup]="quoteForm" (ngSubmit)="onQuotesSubmit(quoteForm.value)">
+        <div class="table-quotes">
+          <table class="table-quotes">
+            <caption>Citas del usuario</caption>
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Fecha de la cita</th>
+                <th scope="col">Procedimiento</th>
+                <th scope="col">Esteticista</th>
+                <th scope="col">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="dateQuotes" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="dateQuotes"></mat-datepicker-toggle>
+                    <mat-datepicker #dateQuotes></mat-datepicker>
+                  </mat-form-field>
+                </th>
+                <th scope="row">
+                  <mat-form-field *ngIf="procedures">
+                    <mat-select formControlName="procedure">
+                      <mat-option *ngFor="let procedureArrayOne of procedures" [value]="procedureArrayOne.id">
+                        {{procedureArrayOne.description}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </th>
+                <th scope="row">
+                  <mat-form-field *ngIf="employees">
+                    <mat-select formControlName="employee">
+                      <mat-option *ngFor="let employeeArrayOne of employees" [value]="employeeArrayOne.id">
+                        {{employeeArrayOne.names}} {{employeeArrayOne.surnames}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </th>
+                <th scope="row">
+                  <mat-form-field>
+                    <mat-label>Notas:</mat-label>
+                    <textarea matInput minlength="3" formControlName="notes"></textarea>
+                  </mat-form-field>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-row">
+            <div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Fotografía antes del procedimiento:</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*"
+                    (change)="changeListener($event, false)">
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile2">Fotografía después del procedimiento:</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile2" accept="image/*"
+                    (change)="changeListener($event, true)">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <button mat-raised-button class="btn btn-success" matStepperNext
+          [disabled]="quoteForm.status !== constants.STATE_CORRECT_FORM">Guardar cita</button>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>
+<ceg-spinner *ngIf="spinner"></ceg-spinner>

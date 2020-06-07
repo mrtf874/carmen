@@ -1,0 +1,10 @@
+.photo-ceg > div {
+  text-align: center;
+}
+.photo-ceg > div > h4 {
+  text-align: left;
+}
+.photo-ceg > div > img {
+  max-width: 35vw;
+  max-height: 35vw;
+}

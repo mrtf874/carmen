@@ -1,0 +1,63 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+      aria-selected="true">Buscar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+      aria-selected="false">Cumpleaños</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="card form-card card-client">
+      <ceg-table *ngIf="showTable && !constant.REFRESH_TABLE"></ceg-table>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="card form-card card-client">
+      <div class="card-body">
+        <form [formGroup]="birthdayForm" (ngSubmit)="onFormSubmit(birthdayForm.value)">
+          <mat-form-field *ngIf="constant.month">
+            <mat-label>Mes de nacimiento</mat-label>
+            <mat-select formControlName="birthday">
+              <mat-option *ngFor="let month of constant.month" [value]="month.id"
+                (click)="getClientsByBirthday(month.id)">
+                {{month.description}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="table-scroll">
+            <table class="table" *ngIf="clients">
+              <caption>Datos del usuario</caption>
+              <thead class="table-success">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Correo electrónico</th>
+                  <th scope="col">Celular</th>
+                  <th scope="col">Dirección</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let client of clients">
+                  <th scope="row">{{client.names}}</th>
+                  <td>{{client.surnames}}</td>
+                  <td><a href=mailto:{{client.email}}>{{client.email}}</a></td>
+                  <td>{{client.mobile}}</td>
+                  <td>{{client.address}}</td>
+                  <td class="option-icon">
+                    <a href="javascript:void(0);" (click)="viewDetail(client)"><img src="../../../../assets/img/eye.svg"
+                        alt="View"></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<ceg-spinner *ngIf="spinner"></ceg-spinner>

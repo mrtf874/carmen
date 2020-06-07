@@ -1,0 +1,70 @@
+<form>
+  <div class="form-group form-inline">
+    Buscar: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="tableService.searchTerm" />
+    <span class="ml-3" *ngIf="tableService.loading$ | async">Cargando...</span>
+  </div>
+  <div class="data-table table-scroll">
+    <table class="table table-striped table-ceg">
+      <caption>Clientes</caption>
+      <thead class="table-success">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" sortable="names" (sort)="onSort($event)">Nombre</th>
+          <th scope="col" sortable="surnames" (sort)="onSort($event)">Apellido</th>
+          <th scope="col" sortable="surnames" (sort)="onSort($event)">Ciudad</th>
+          <th scope="col" sortable="surnames" (sort)="onSort($event)">Estado</th>
+          <th scope="col" sortable="surnames" (sort)="onSort($event)">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients$ | async">
+          <th scope="row">{{ client.id }}</th>
+          <td>
+            <ngb-highlight [result]="client.names" [term]="tableService.searchTerm"></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight [result]="client.surnames" [term]="tableService.searchTerm"></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight [result]="client.city.description" [term]="tableService.searchTerm"></ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight [result]="client.city.state.description" [term]="tableService.searchTerm"></ngb-highlight>
+          </td>
+          <td class="option-icon">
+            <a href="javascript:void(0);" (click)="editClient(client)"><img src="../../../../assets/img/edit.svg"
+                alt="Edit"></a>
+            <a href="javascript:void(0);" (click)="viewDetail(client)"><img src="../../../../assets/img/eye.svg"
+                alt="View"></a>
+            <a #PDF class="pdf-download" (click)="downloadPDF(client.pdf_signed_form)"
+              download="consentimiento_informado.pdf"><img src="../../../../assets/img/pdf.svg" alt="PDF"></a>
+            <a href="javascript:void(0);" (click)="deleteClientById(client.id)"><img
+                src="../../../../assets/img/delete.svg" alt="PDF"></a>
+            <a href="javascript:void(0);" (click)="addQuote(client.id)"><img src="../../../../assets/img/add.svg"
+                alt="Add"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="d-flex justify-content-between p-2">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <ngb-pagination [collectionSize]="total$ | async" [(page)]="tableService.page"
+          [pageSize]="tableService.pageSize" [maxSize]="4" class="page-success" [rotate]="true" [ellipses]="false"
+          [boundaryLinks]="true">
+        </ngb-pagination>
+      </div>
+      <div class="form-group col-md-5">
+        <mat-form-field class="configuration-table">
+          <mat-label>Clientes por página</mat-label>
+          <mat-select [(value)]="selected">
+            <mat-option (click)="onChangePageSize(10)" value="10">10 clientes</mat-option>
+            <mat-option (click)="onChangePageSize(50)" value="50">50 clientes</mat-option>
+            <mat-option (click)="onChangePageSize(100)" value="100">100 clientes</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</form>

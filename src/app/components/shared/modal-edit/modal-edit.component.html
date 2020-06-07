@@ -1,0 +1,213 @@
+<h2 mat-dialog-title>Editar información de {{client.names}}</h2>
+<mat-dialog-content class="mat-typography" *ngIf="client">
+  <div class="form-card card-client">
+    <div class="card-body">
+      <form [formGroup]="profileForm" (ngSubmit)="onFormSubmit(profileForm.value)">
+        <div class="title">
+          <h3>Información de contacto</h3>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <div class="form-client">
+              <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input required minlength="3" maxlength="30" formControlName="names" matInput>
+                <mat-error><span
+                    *ngIf="!profileForm.get('names').valid && profileForm.get('names').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Apellido</mat-label>
+                <input required minlength="3" maxlength="30" formControlName="surnames" matInput>
+                <mat-error><span
+                    *ngIf="!profileForm.get('surnames').valid && profileForm.get('surnames').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <div class="form-row">
+                <div class="col min-col">
+                  <mat-form-field>
+                    <mat-label>Teléfono fijo</mat-label>
+                    <span matPrefix>+</span>
+                    <input required pattern="\d*" minlength="3" maxlength="30" type="tel" formControlName="phone"
+                      matInput>
+                    <mat-error><span
+                        *ngIf="!profileForm.get('phone').valid && profileForm.get('phone').touched">{{constants.ENTRY_ERROR}}</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col min-col">
+                  <mat-form-field>
+                    <mat-label>Teléfono celular</mat-label>
+                    <span matPrefix>+</span>
+                    <input required pattern="\d*" minlength="3" maxlength="30" type="tel" formControlName="mobile"
+                      matInput>
+                    <mat-error><span
+                        *ngIf="!profileForm.get('mobile').valid && profileForm.get('mobile').touched">{{constants.ENTRY_ERROR}}</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <mat-form-field>
+                <mat-label>Dirección</mat-label>
+                <input required minlength="3" maxlength="30" formControlName="address" matInput>
+                <mat-error><span
+                    *ngIf="!profileForm.get('address').valid && profileForm.get('address').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <div class="form-row">
+                <div class="col min-col">
+                  <mat-form-field *ngIf="countries">
+                    <mat-label>País</mat-label>
+                    <mat-select formControlName="country">
+                      <mat-option *ngFor="let countryArrayOne of countries" [value]="countryArrayOne.id"
+                        (click)="getStates(countryArrayOne.id)">
+                        {{countryArrayOne.description}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error><span
+                        *ngIf="!profileForm.get('country').valid && profileForm.get('country').touched">{{constants.ENTRY_ERROR}}</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col min-col">
+                  <mat-form-field>
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="state" [disabled]="disableState.value">
+                      <mat-option *ngFor="let stateArrayOne of states" [value]="stateArrayOne.id"
+                        (click)="getCities(stateArrayOne.id)">
+                        {{stateArrayOne.description}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error><span
+                        *ngIf="!profileForm.get('state').valid && profileForm.get('state').touched">{{constants.ENTRY_ERROR}}</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col min-col">
+                  <mat-form-field>
+                    <mat-label>Ciudad</mat-label>
+                    <mat-select formControlName="city" [disabled]="disableCities.value">
+                      <mat-option *ngFor="let cityArrayOne of cities" [value]="cityArrayOne.id">
+                        {{cityArrayOne.description}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error><span
+                        *ngIf="!profileForm.get('city').valid && profileForm.get('city').touched">{{constants.ENTRY_ERROR}}</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col min-col">
+                  <mat-form-field>
+                    <mat-label>Código postal</mat-label>
+                    <input matInput minlength="2" #postalCode maxlength="5" formControlName="code">
+                    <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                    <mat-error><span
+                        *ngIf="!profileForm.get('code').valid && profileForm.get('code').touched">{{constants.ENTRY_ERROR}}</span>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Fotografía del paciente:</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*"
+                    (change)="changeListener($event)">
+                </div>
+              </form>
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Consentimiento Informado</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/*"
+                    (change)="changeListener($event)">
+                </div>
+              </form>              
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <div class="form-client">
+              <mat-form-field>
+                <mat-label>Correo electrónico</mat-label>
+                <input required minlength="3" maxlength="30" formControlName="email" matInput>
+                <mat-error><span
+                    *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input matInput formControlName="birthday" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error><span
+                    *ngIf="!profileForm.get('birthday').valid && profileForm.get('birthday').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Ocupación</mat-label>
+                <input required minlength="3" maxlength="30" formControlName="occupation" matInput>
+                <mat-error><span
+                    *ngIf="!profileForm.get('occupation').valid && profileForm.get('occupation').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field *ngIf="contactForms">
+                <mat-label>Forma de contacto</mat-label>
+                <mat-select formControlName="contact">
+                  <mat-option *ngFor="let contactArrayOne of contactForms" [value]="contactArrayOne.id">
+                    {{contactArrayOne.description}}
+                  </mat-option>
+                </mat-select>
+                <mat-error><span
+                    *ngIf="!profileForm.get('contact').valid && profileForm.get('contact').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Notas:</mat-label>
+                <textarea matInput style="height: 87px" required minlength="3" formControlName="commentary"></textarea>
+                <mat-error><span
+                    *ngIf="!profileForm.get('commentary').valid && profileForm.get('commentary').touched">{{constants.ENTRY_ERROR}}</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <table class="table" *ngIf="client.quotes">
+          <caption>Citas del usuario</caption>
+          <thead class="table-success">
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Procedimiento</th>
+              <th scope="col">Esteticista</th>
+              <th scope="col">Notas</th>
+              <th scope="col">Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let quote of client.quotes">
+              <th scope="row">{{ quote.date }}</th>
+              <td>{{quote.procedure.description}}</td>
+              <td>{{quote.employee.names}} {{quote.employee.surnames}}</td>
+              <td>{{quote.notes}}</td>
+              <td class="option-icon">
+                <a href="javascript:void(0);" (click)="editQuote(quote)"><img src="../../../../assets/img/edit.svg"
+                    alt="View"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="submit">
+          <button mat-raised-button class="btn btn-success btn-lg btn-block" matStepperNext
+            [disabled]="profileForm.status !== constants.STATE_CORRECT_FORM" *ngIf="!addQuote">
+            Guardar datos
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>
+<ceg-spinner *ngIf="spinner"></ceg-spinner>

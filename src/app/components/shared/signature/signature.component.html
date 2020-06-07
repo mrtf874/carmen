@@ -1,0 +1,6 @@
+<div class="card signature-card" #sigContainer (window:resize)="beResponsive()">
+  <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+</div>
+<div class="keypad">
+  <button type="button" class="btn btn-outline-secondary button-clean" (click)="clear()">Limpiar</button>
+</div>

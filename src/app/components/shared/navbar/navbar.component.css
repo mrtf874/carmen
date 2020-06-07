@@ -1,0 +1,16 @@
+.ceg-navbar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
+.navbar .logo {
+  padding: 5px 15px;
+  width: 280px;
+}
+
+@media (max-width: 375px) {
+  .navbar .logo {
+    width: 210px;
+  }
+}

@@ -1,0 +1,999 @@
+<ng-template #longContent let-modal class="confirmation">
+  <div class="modal-header">
+    <div class="container">
+      <div class="col-12">
+        <strong *ngIf="!language" class="modal-title">CONSENTIMIENTO INFORMADO</strong>
+        <strong *ngIf="language" class="modal-title">INFORMED CONSENT</strong>
+      </div>
+      <div class="col-12">
+        <form>
+          <div class="btn-group btn-group-toggle">
+            <label class="btn-primary" ngbButtonLabel>
+              <input type="checkbox" (click)="language = false" ngbButton> Español
+            </label>
+            <label class="btn-primary" ngbButtonLabel>
+              <input type="checkbox" (click)="language = true" ngbButton> English
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" id="pdfConsent">
+    <div *ngIf="language">
+        <a><img class="logo" src="../../../../assets/img/logo_en.png" alt=""></a>
+        <hr>
+        <p><strong>PERMANENT MAKE-UP: ADVANTAGES, DISADVANTAGES AND RISKS</strong></p>
+      <p class="informed-consent">
+        Permanent make-up has more advantages than disadvantages. It is the best solution for looking
+        well 24 hours a day. It gives you the peace of mind of knowing that your make-up is always in
+        place and that it is done in the way that best suits your face features and the color of your
+        eyes, skin and hair, making you look attractive at any time. It also frees you forever from
+        applying traditional cosmetic products on your face, such us lipsticks and eyeliners that
+        might end up affecting your skin in the long run.
+        It is of crucial importance that the esthetician is very well experienced in permanent makeup
+        and that he or she has an extensive base of satisfied customers. Preferably, it would be good
+        to know that among her customers there are people that you know, who can provide a referral.
+      </p>
+      <strong><u>The errors most commonly seen in the practice of permanent make-up are:</u></strong>
+      <p>
+        1) An inadequate outlining 2) Inadequate choosing of colors. These errors can be corrected but
+        it demands some time and difficulty. Erasing a tattoo is much more difficult and expensive than
+        making it. At the moment, there are some laser-based products and procedures for removing
+        tattoos. These procedures are used only in extreme situations where the tattoo has to be
+        completely removed and redone. However, in most cases, a simpler method is used that consists
+        of retouching the old tattoo with new colors, applying some camouflage tones in the areas that
+        need to be faded or eliminated.
+      </p>
+      <strong><u>About risk of contagion:</u></strong>
+      <p>
+        Absolutely all the materials used in permanent make-up are disposable. The tattooing machine uses
+        needles, which are removed from their envelopes and installed in the machine before you; once
+        your permanent make-up is done, all these envelopes are removed from the machine and properly
+        disposed of.
+      </p>
+      <strong><u>Rejection to the pigments as rejection to foreign matter:</u></strong>
+      <p>
+        There is an extremely small possibility that one person’s organism rejects the pigmentation as a
+        foreign matter. If you know of any allergies that you might have, you should inform about it to
+        the esthetician; she can make a test in a small area, before doing the actual make-up job.
+        People with tendency to anomalous scarring are somewhat unpredictable in regard to permanent
+        make-up. In most cases, they do not have any problems. However, if you know that you have had
+        this in the past, you should inform about this to the esthetician, as well.</p>
+      <p>The esthetician is not responsible for the patient`s rejection to foreign matter or anomalous
+        scarring.</p>
+      <p>The esthetician’s job is limited to guarantee that the makeup is well designed and appropriate
+        for your facial features and that every material used in the job is disposable.</p>
+      <p>This warranty represents about a 90% of the success of the permanent makeup, the rest being
+        the patient’s responsibility in taking care of herself at home.
+      </p>
+      <p><strong>AFTERCARE INSTRUCTIONS FOR YOUR PERMANENT MAKE-UP</strong></p>
+      <p>
+        Please follow these recommendations after your PERMANENT MAKE-UP procedures of EYEBROWS,
+        EYELINERS, LIPS, SHADE, AREOLAS, CAMUFLAGES or CAPILLARY MICROPIGMENTACION.
+      </p>
+      <p>
+        Ice the area consistently during the first 24 hours after the procedure by applying ice on it
+        every 15 minutes. You should rest another 5 minutes after icing, then ice again. Put the ice
+        inside a plastic bag and then wrap it around a towel so it is not so uncomfortable. By icing
+        the area, you avoid swelling and the skin heals quicker.
+      </p>
+      <p>
+        You <strong>MUST</strong> apply cream (Vaseline, Vita E or Aquaphor) during the first two weeks after the
+        procedure at least three times a day, or even better every two hours to hydrate the recently
+        pigmented area. Wash or clean the area with wipes before applying the cream a second time. Not
+        doing so will allow thick scabs to form, which will peel the color when they come off, not to
+        mention the increase in risk of infection bellow the scab.
+      </p>
+      <p>
+        <strong>AVOID</strong> taking in direct sunlight during the first two weeks. Wear a hat and sunglasses
+        when going out.
+      </p>
+      <p>
+        <strong>AVOID </strong> saunas, hot tubs or pools *chloride* during the first two weeks</p>
+      <p>
+        Try <strong>NOT </strong> to shower for prolonged periods of time and avoid using very hot water.
+        You can protect the area by applying some Vaseline before showering.
+      </p>
+      <p>
+        Do <strong>NOT </strong>use retinoic or any glycolic acid on pigmented areas while healing.
+      </p>
+      <p>
+        <strong>SPECIAL CARE INSTRUCTIONS FOR: </strong></p>
+      <p>
+        <strong>EYEBROWS:</strong> The pigmented area will look darker than expected during the first few weeks
+        after the procedure. Don’t be alarmed if the little scabs fall off with some pigmentation; this is
+        completely normal and will happen during the first few days, and the color will lighten after the
+        little scabs have completely fallen off.
+      </p>
+      
+      <p>
+        <strong>EYES:</strong> As well as the previous instructions, do not apply mascara or makeup while using
+        the hydrating ointment (Vaseline, Vitamin E or Aquaphor); the eyeliners will look progressively thinner
+        after the first few weeks. Do not apply antibiotics. Avoid eating high sodium foods; these may increase
+        swelling. Do not use contact lenses on the first day and when going out, use sunglasses.
+      </p>
+      <p>
+        <strong>LIPS:</strong> Do not wet your lips with your tongue as this may increase the risk of lip herpes.
+        If you know you carry the virus, please consult your physician.
+      </p>
+      <p>You must also use alcohol-free mouthwash and avoid consuming hot, greasy, spicy or very salty foods.</p>
+      <p>Apply chopstick to moisten your lips. Your lips will feel very dry after the scabs have fallen off.</p>
+      <p>
+        <strong>NOTE: THE SUCCESS OF THE PROCEDURE DEPENDS ON HOW WELL YOU FOLLOW THE AFTERCARE INSTRUCTIONS,
+          SHOULD YOU HAVE QUESTIONS, PLEASE DO NOT HESITATE TO CONTACT ME. </strong>
+      </p>
+      <p class="page"></p>
+
+      <div class="modal-header">
+        <hr>
+        <strong class="modal-title">CONSENT TO APPLICATION OF PERMANENT MAKEUP PROCEDURE</strong>  
+      </div>
+      <div class="modal-body" id="pdfConsent">
+        <p class="informed-consent">
+          I, <input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="name" />, am over
+          the age of 18, not under the influence of drugs or alcohol and I desire to receive the indicated
+          permanent cosmetic procedure. The general nature of cosmetic tattooing as well as the specific procedure
+          to be performed has been explained to me, and I declare that:
+
+        </p>
+        <ol>
+          <li>I have been fully informed by my esthetician about the advantages, disadvantages, possible risks
+            or complications and consequences related to permanent makeup.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            (use your initials to indicate approval, or x to decline).
+          </li>
+          <li>I am aware that the permanent makeup artist will exercise all caution possible to guard my
+            safety and wellbeing during the procedure. However, I am aware that no procedure is absolutely free
+            of risk. I assume the risk of having a permanent make up procedure.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          </li>
+          <li>
+            I accept that the origins of some risks are inherent to my own body, and therefore these are my
+            sole responsibility. These risks are:
+            <ol type="a">
+              <li>
+                My body might react negatively to a foreign matter, producing: infection, allergic reaction,
+                scarring, keloidal scar or inconsistent color.
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+              <li>
+                I understand the actual color of the pigment may be modified slightly, due to the tone
+                and color of my skin.
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+              <li>
+                I understand that my face may not be symmetrical, therefore, one eyebrow or one lip,
+                may be higher than the other in the procedure.
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+            </ol>
+          </li>
+          <li>
+            I fully understand this is a tattoo process and therefore not an exact science, but an art.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          </li>
+          <li>
+            I understand that if I have any skin treatments, laser hair removal, plastic surgery, peeling,
+            or other skin altering procedures, it may result in adverse changes to my permanent cosmetics.
+            I acknowledge some of these potential adverse changes may not be correctable.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          </li>
+          <li>
+            I have reviewed and received pre and post procedure instructions by my esthetician and
+            I will strictly adhere to such instructions.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          </li>
+          <li>
+            If I have any of the following medical conditions, I must advise my esthetician and assume
+            the possible risks that they carry:
+            <ol type="a">
+              <li>
+                In case I am a carrier of the herpes simplex virus on my lips, I will consult with and
+                strictly follow my doctor’s instructions before contemplating any procedure around my
+                lips because it might produce blisters.
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+              <li>
+                If I am on any medication for a medical condition, I will advise my esthetician.
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+              <li>
+                If I have known allergies, I must inform my esthetician about them.
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+            </ol>
+          </li>
+          <li class="page">
+            I can assure that all the potentially harmful utensils used in the procedure are disposable and that
+            they were shown to me and opened in my presence, and finally disposed. Therefore, in the future,
+            if I happen to be affected by a contagious disease it will not be the result of this permanent
+            makeup procedure.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          </li>
+          <li>
+            I understand the difference between a touch-up work and overall makeover, as follows:
+            <ol type="a">
+              <li>
+                A touch-up work is a minor permanent makeup procedure on a small area, usually with the
+                intention of correcting something or making minor changes. This work is to be done within the
+                <strong>first month </strong> after having done the original procedure, and will cost 10% of
+                the original work’s value, <strong>because a touch-up is not included in the original price.</strong>
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+              <li>
+                b. An overall makeover is a procedure requested by a client who already has permanent makeup
+                from us and consists of a change in color or form covering all the original area of the eyebrows,
+                eyeliners or lips. Because the work must be redone in its entirety, this type of work
+                is considered a new one and <strong>should be paid in full.</strong>
+                <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+              </li>
+            </ol>
+          </li>
+          <li>
+            I grant my esthetician permission to take pictures of my eyes, lips, eyebrows (or another area of work),
+            before, during, and after the procedure, as proof of existing and new appearance
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          </li>
+          <li>
+            I grant permission to use pictures of my permanent makeup job to be used as samples of work,
+            testimonials, on social networks and in carmeng.com.
+            <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            <br>
+            By signing below, I agree to the procedures discussed above. I certify I have read and initialed
+            the above paragraphs and have full explanations to my understanding and consent to this procedure(s).
+            There is not 100% guarantee that all pigments will hold on camouflages or correction jobs. I accept
+            full responsibility for the decision to have this cosmetic tattoo work done and I waive any legal
+            action against Carmen Galindo, permanent makeup artist, now or in the future, as a result of any
+            risks, reactions or undesirable result that might occur.
+          </li>
+        </ol>
+        <strong>To be completed by the client:</strong>
+        <div class="table-scroll">
+          <table class="table">
+            <caption>Client</caption>
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Date of birth:</th>
+                <th scope="col">Age:</th>
+                <th scope="col">E-mail:</th>
+                <th scope="col">Phone:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <form class="form-inline ceg">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dpi" [(ngModel)]="birthdate"
+                          ngbDatepicker #dp="ngbDatepicker">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()"
+                            type="button"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </td>
+                <td>{{ birthdate | age }}</td>
+                <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="email" /></td>
+                <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="phoneNumber" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Client’s Signature:</p>
+        <ceg-signature></ceg-signature>
+
+        <strong>
+          To be completed by the permanent makeup artist:</strong>
+        <div class="table-scroll">
+          <table class="table">
+            <caption>Artist</caption>
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Date:</th>
+                <th scope="col">Name:</th>
+                <th scope="col">Procedure:</th>
+                <th scope="col">No. of visits required:</th>
+                <th scope="col">Cost of procedure(s):</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <form class="form-inline ceg">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date" ngbDatepicker
+                          #d="ngbDatepicker">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                            type="button"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </td>
+                <td><input id="typeahead-basic" type="text" class="input-form-control long"
+                    [(ngModel)]="nameBeautician" />
+                </td>
+                <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="process" />
+                </td>
+                <td><input id="typeahead-basic" type="text" class="input-form-control long"
+                    [(ngModel)]="numberVisits" />
+                </td>
+                <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="cost" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Signed:</p>
+        <ceg-signature></ceg-signature>
+        <hr>
+        <p><strong>SERVICE CONTRACT, TERMS AND CONDITIONS</strong></p>
+        <p>All this information is confidential.</p>
+        <ol>
+          <li>
+            How did you hear about Carmen Galindo’s Permanent make-up service?
+            <textarea matInput style="height: 87px" required minlength="3" cdkTextareaAutosize
+              [(ngModel)]="hear"></textarea>
+          </li>
+          <li>
+            If you have had any permanent makeup work done by anyone else other than me, or me, please select the
+            work you had done and describe its current condition and how it was made.
+            <section class="example-section">
+              <mat-checkbox class="example-margin" [(ngModel)]="eyebrows">Eyebrows</mat-checkbox>
+              <br>
+              <mat-checkbox class="example-margin" [(ngModel)]="eyes">Eyeliners</mat-checkbox>
+              <br>
+              <mat-checkbox class="example-margin" [(ngModel)]="lips">Lips</mat-checkbox>
+              <br>
+              <mat-checkbox class="example-margin" [(ngModel)]="nipple">Areola</mat-checkbox>
+              <br>
+              <mat-checkbox class="example-margin" [(ngModel)]="camouflage">Camouflages</mat-checkbox>
+              <br>
+              <mat-checkbox class="example-margin" [(ngModel)]="pigmentation">Capillary micropigmentation</mat-checkbox>
+            </section>
+          </li>
+          <li>
+            Comments:
+            <textarea matInput style="height: 87px" required minlength="3" cdkTextareaAutosize
+              [(ngModel)]="commentary"></textarea>
+          </li>
+        </ol>
+        <p class="page"></p>
+        <table class="table">
+          <caption>Personal Information</caption>
+          <thead class="table-success">
+            <tr>
+              <th scope="col">YES / NO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Do you have any tattoos? </td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="tattoos">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>Are you allergic to any cosmetics or medicine including anesthesia, xylocaine,
+                lidocaine or any topical analgesics?</td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="allergies">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>Are you diabetic or hypertensive? </td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="diabetes">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>Are you pregnant or nursing? </td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="pregnant">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>Do you have keloidal skin, (abnormal scaring?</td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="keloide">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>Do you have any contagious diseases? </td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="contagious">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>Do you have any additional comments?</td>
+              <td>
+                <section class="example-section">
+                  <mat-radio-group [(ngModel)]="adicional">
+                    <mat-radio-button class="example-margin" value="true">YES</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="false">NO</mat-radio-button>
+                  </mat-radio-group>
+                </section>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The softer the permanent make-up is, the less it lasts, but it looks more natural during the
+          time it lasts. The darker it is, the longer it lasts, but it might look less natural or more
+          accentuated. The darker it is, the fewer chances there are that you need to redo the job later.
+          The softer it is, the more chances there are that you are going to need to re-do the job in a
+          short time. A touch-up is a reinforcement in a small area; it does NOT imply redoing the
+          entire work. If you chose a natural looking makeup and later decide to make it darker, you will
+          have to pay 100% of the cost because it will be considered a new makeup, not as reinforcement.
+        </p>
+        <p class="page"><strong>
+          According to the chart above and the comments next to it, please indicate your
+            choices below:</strong>
+        </p>
+        <ol>
+          <li>If you want permanent make-up on your <strong>EYEBROWS</strong>, please choose between these options:
+            <ol type="a">
+              <li>I want eyebrows that last a long time, even though they look darker during the first months.</li>
+              <li>I want eyebrows that look very natural even if they don’t last very long.</li>
+            </ol>
+          </li>
+          <li>If you want permanent make-up on your <strong>EYELINERS</strong>, please choose between these options:
+            <ol type="a">
+              <li>I want eyeliners that last a long time, even though they look darker during the first months.</li>
+              <li>I want eyeliners that look very natural even if they don’t last very long.</li>
+            </ol>
+          </li>
+          <li>
+            If you want permanent makeup on your<strong>LIPS</strong>, please choose between
+            these options:
+            <ol type="a">
+              <li>I want dark, strong color tones in my lips so that they last a long time, even though
+                they look darker during the first months. </li>
+              <li>I want soft, natural tones on my lips even if they don’t last very long.</li>
+            </ol>
+          </li>
+          <li>If you want permanent make-up on your <strong>AREOLAS</strong>, please choose between these options:
+            <ol type="a">
+              <li>I want dark, strong color tones in my areolas so that they last a long time, even
+                though they look darker during the first months
+              </li>
+              <li>I want soft, natural tones on my areolas even if they don’t last very long.</li>
+            </ol>
+          </li>
+        </ol>
+        <p><strong>SPECIAL CONDITIONS FOR THE RENEWAL OF WORN OUT OR AGED PERMANENT MAKE-UP:</strong></p>
+        <p>
+          If you request a renovation or modification of a permanent make-up procedure that is worn out, aged,
+          usually with a grayish, reddish tone, that I need to work on, or with a shape that I need to modify,
+          this represents more work than doing a new procedure on a clear skin. In that case, the client must
+          come back for more sessions until a new color is re-established. In these cases, you would pay the
+          first job as a new job, 100%. The second session (which happens within the first month after the
+          procedure) will be the 50%, and the third (which happens within the second month after the procedure)
+          or more will be 20% of the price of a full new work.
+        </p>
+        <ceg-signature></ceg-signature>
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dpif" [(ngModel)]="signatureDate" ngbDatepicker
+                #dpf="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="dpf.toggle()" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="!language">
+        <a><img class="logo" src="../../../../assets/img/logo_en.png" alt=""></a>
+        <hr>
+        <p><strong>CONSENTIMIENTO INFORMADO PARA REALIZAR PROCEDIMIENTO(S) DE MAQUILLAJE PERMANENTE</strong></p>
+      <p class="informed-consent">
+        Yo, <input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="name" />, soy mayor
+        de
+        edad, no me encuentro bajo influencia de sustancias psicoactivas como drogas o alcohol y deseo recibir el
+        procedimiento de maquillaje permanente. He sido informado/a acerca de la naturaleza general del tatuaje
+        cosmético
+        así como el procedimiento, y declaro lo siguiente:
+      </p>
+      <ol>
+        <li>Se me ha informado completamente sobre las ventajas, desventajas, posibles riesgos o complicaciones y
+          consecuencias relacionadas al maquillaje permanente.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          (escriba sus iniciales para indicar aprobación).
+        </li>
+        <li>Soy consciente que mi esteticista utilizará todos los medios a su alcance, buscando seguridad para mí
+          durante
+          el procedimiento. Sin embargo, es de mi conocimiento que no existen garantías absolutas del resultado del
+          tratamiento, y por ende asumo todos los riesgos y beneficios que traen consigo el procedimiento solicitado y
+          el propuesto.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+        </li>
+        <li>
+          Acepto que los riesgos pueden ocurrir por condiciones en mi cuerpo y por lo tanto son mi única
+          responsabilidad.
+          Estos riesgos son:
+          <ol type="a">
+            <li>
+              Mi cuerpo puede reaccionar negativamente a un cuerpo extraño, produciendo infección, reacciones
+              alérgicas,
+              cicatrices, cicatriz queloide o inconsistencias en el color.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+            <li>
+              Entiendo que el color actual del pigmento puede cambiar debido al color y tono de mi piel.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+            <li>
+              Entiendo que el rostro no es simétrico, por lo tanto una ceja o un línea de ojos puede presentar
+              diferencias de apariencia.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+          </ol>
+        </li>
+        <li>
+          Comprendo que el maquillaje permanente es un arte y no una ciencia exacta.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+        </li>
+        <li>
+          Entiendo que si tengo algún tratamiento en la piel, depilación láser, cirugía plástica u otro procedimiento
+          que altere mi piel, puede resultar en cambios adversos en mi maquillaje permanente. Comprendo que algunos de
+          estos potenciales cambios adversos pueden no ser corregibles.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+        </li>
+        <li>
+          He recibido y revisado las instrucciones pre y post procedimiento por parte de mi esteticista, las cuales
+          seguiré estrictamente.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+        </li>
+        <li>
+          Si presento alguna de las siguientes condiciones médicas, debo informar a mi esteticista y asumir los
+          posibles
+          riesgos que estas ocasionen:
+          <ol type="a">
+            <li class="page">
+              En caso de ser portador/a del virus herpes simple en los labios, consultaré y seguiré las instrucciones
+              de
+              mi doctor antes de contemplar cualquier procedimiento de maquillaje permanente alrededor de mis labios.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+            <li>
+              Si estoy bajo tratamiento médico por alguna condición de salud, debo informar a mi esteticista.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+            <li>
+              Si antes de este procedimiento he presentado reacciones alérgicas ante algún material o sustancia que
+              vaya a
+              ser
+              utilizada durante el mismo, debo informar a mi esteticista.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+          </ol>
+        </li>
+        <li>
+          Puedo asegurar que todos los utensilios usados en mí han sido completamente desechables y libres de toda
+          contaminación que afecten mi salud, que también fueron abiertos en mi presencia y finalmente descartados.
+          Por lo
+          tanto, si en el futuro soy víctima de una enfermedad infecto-contagiosa, declaro que no la adquirí durante
+          este
+          procedimiento.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+        </li>
+        <li>
+          Entiendo perfectamente la diferencia entre un retoque y un repaso general:
+          <ol type="a">
+            <li>
+              Un retoque es un refuerzo en un área pequeña y que se realizará en un tiempo no mayor a un mes, y que
+              pagaré
+              10% del valor original puesto que el retoque no está incluido en el precio inicial.
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+            <li>
+              Un repaso general, es un procedimiento requerido por un cliente que ya ha sido atendido por Carmen
+              Galindo y
+              que consiste en un cambio de color y/o forma cubriendo toda el área original de las cejas o labios.
+              Debido a
+              que el trabajo debe hacerse nuevamente en su totalidad e independientemente del tiempo transcurrido con
+              el
+              trabajo inicial, éste debe pagarse en su totalidad (100%).
+              <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+            </li>
+          </ol>
+        </li>
+        <li>
+          Concedo permiso a mi esteticista para que tome fotos de mis ojos, labios, cejas, (u otra área de trabajo de
+          maquillaje permanente) antes, durante y después del procedimiento, como prueba de la apariencia antes y
+          después
+          del procedimiento.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+        </li>
+        <li>
+          Concedo permiso a mi esteticista para usar fotos de mi trabajo de maquillaje permanente como ejemplos de
+          trabajo, testimonios, en redes sociales y en carmeng.com.
+          <input id="typeahead-basic" type="text" class="input-form-control short" [(ngModel)]="initials" />
+          <br>
+          Firmando abajo, acepto los procedimientos aquí descritos. Certifico que he leído y llenado con mis iniciales
+          los
+          párrafos anteriores y se me ha explicado completamente el procedimiento. Doy mi consentimiento para este(os)
+          procedimiento(s). No existe una garantía del 100% de que los pigmentos retengan el color en trabajos de
+          camuflaje o correcciones. Acepto toda la responsabilidad por la decisión de realizar este trabajo de
+          maquillaje
+          permanente y renuncio a cualquier acción legal contra Carmen Galindo, maquilladora permanente ahora o en el
+          futuro como resultado de cualquier riesgo, reacción o resultado no deseado que pueda ocurrir.
+        </li>
+      </ol>
+      <p class="page"></p>
+      <strong>Para ser completado por el cliente:</strong>
+      <div class="table-scroll">
+        <table class="table">
+          <caption>Esteticista</caption>
+          <thead class="table-success">
+            <tr>
+              <th scope="col">Fecha de nacimiento:</th>
+              <th scope="col">Edad:</th>
+              <th scope="col">Correo electrónico:</th>
+              <th scope="col">Número de teléfono:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <form class="form-inline ceg">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dpi" [(ngModel)]="birthdate"
+                        ngbDatepicker #dp="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </td>
+              <td>{{ birthdate | age }}</td>
+              <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="email" /></td>
+              <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="phoneNumber" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Firma del paciente:</p>
+      <ceg-signature></ceg-signature>
+      <strong>Para ser completado por la esteticista:</strong>
+      <div class="table-scroll">
+        <table class="table">
+          <caption>Esteticista</caption>
+          <thead class="table-success">
+            <tr>
+              <th scope="col">Fecha de procedimiento</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Procedimiento</th>
+              <th scope="col">Número de visitas</th>
+              <th scope="col">Costo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <form class="form-inline ceg">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date" ngbDatepicker
+                        #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </td>
+              <td><input id="typeahead-basic" type="text" class="input-form-control long"
+                  [(ngModel)]="nameBeautician" />
+              </td>
+              <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="process" />
+              </td>
+              <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="numberVisits" />
+              </td>
+              <td><input id="typeahead-basic" type="text" class="input-form-control long" [(ngModel)]="cost" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Firma del esteticista:</p>
+      <ceg-signature></ceg-signature>
+      <hr>
+      <p class="page"><strong>CUIDADOS POSTERIORES PARA EL MAQUILLAJE PERMANENTE</strong></p>
+      <p>
+        Después de realizado el maquillaje permanente de CEJAS, DELINEADO DE OJOS, LABIOS, SOMBRAS, AREOLAS, O
+        CAMUFLAJES, se debe tener en cuenta las siguientes recomendaciones:
+      </p>
+      <p>
+        Mantener la zona fría durante las primeras 24 horas poniendo hielo 15 minutos y descansando 5 minutos). El
+        hielo debe estar en una bolsa de plástico y envuelto en una toalla de papel. De esta manera se evita la
+        inflamación y la piel sana pronto.
+      </p>
+      <p>
+        Aplicar crema (vaselina, vitamina E o Aquaphor) tres veces al día durante dos semanas. Entre cada aplicación,
+        limpiar la crema anterior utilizando un papel suave o un Q-Tip. Si prefiere, puede lavar la zona con agua.
+      </p>
+      <p>
+        <strong>EVITE</strong> exponerse al sol durante las dos primeras semanas. Debe protegerse con un sombrero y
+        gafas.
+      </p>
+      <p>
+        <strong>EVITE</strong> sauna, jacuzzis o piscina (agua con cloro) durante dos semanas. <strong>EVITE</strong>
+        baño
+        muy prolongado y el agua muy caliente. Puede proteger la zona poniendo un poco de vaselina antes del baño.
+      </p>
+      <p>
+        <strong>EVITE</strong> arrancar las cáscaras, si se forman. Si lo hace, el pigmento que está en proceso de
+        fijación se caerá y quedarán espacios blancos. <strong>EVITE</strong> usar productos despigmentadores tales
+        como
+        ácido retinóico o glicólico cerca de las zonas recién maquilladas.
+      </p>
+      <p>
+        <strong>CUIDADOS ESPECIALES PARA: CEJAS:</strong> Además de los cuidados anteriores tenga en cuenta que el
+        color
+        se verá muy oscuro al principio. Es normal que se caigan pedacitos de cáscaras con color durante las dos
+        primeras
+        semanas. El color se verá más suave después de ese tiempo.
+      </p>
+      <p>
+        <strong>OJOS:</strong> Además de los cuidados anteriores, NO maquille las pestañas durante el tiempo que esté
+        usando la crema humectante. Vaselina o vitamina E. Los delineados se verán más delgados después de dos
+        semanas. NO
+        use cremas antibióticas. NO consuma alimentos altos en sodio porque puede incrementar la inflamación. NO use
+        lentes de contacto durante el primer día. Use gafas.
+      </p>
+      <p>
+        <strong>LABIOS:</strong> Además de los cuidados anteriores, NO humedezca los labios con saliva. Puede
+        favorecer la
+        aparición de herpes simple labial, (si usted es portadora del virus Herpes simple labial debe tener atención
+        médica). Debe usar enjuague bucal SIN alcohol y debe evitar las comidas calientes, grasosas, picantes o muy
+        saladas. Aplicar humectante de labios porque puede sentirlos muy resecos después de que pierda la cáscara.
+      </p>
+      <p>
+        <strong>NOTA: DEL CUIDADO POSTERIOR, DEPENDE EL ÉXITO DEL MAQUILLAJE. POR FAVOR LLÁMENOS SI TIENE ALGUNA
+          PREGUNTA
+          ADICIONAL.</strong>
+      </p>
+      <hr>
+      <p class="page"><strong>CONTRATO DE PRESTACION DE SERVICIOS</strong></p>
+      <p>Toda esta información es confidencial.</p>
+      <ol>
+        <li>
+          ¿Cómo se enteró usted del servicio de maquillaje permanente de Carmen Galindo?
+          <textarea matInput style="height: 87px; border: 1px solid #000000;" required minlength="3" cdkTextareaAutosize
+            [(ngModel)]="hear"></textarea>
+        </li>
+        <li>
+          Si usted ya se ha hecho algún procedimiento de maquillaje permanente, por favor indique aquí cuál o cuáles
+          y describa en qué estado se encuentra ese procedimiento.
+          <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="eyebrows">Cejas</mat-checkbox>
+            <br>
+            <mat-checkbox class="example-margin" [(ngModel)]="eyes">Delineados de Ojos</mat-checkbox>
+            <br>
+            <mat-checkbox class="example-margin" [(ngModel)]="lips">Labios</mat-checkbox>
+            <br>
+            <mat-checkbox class="example-margin" [(ngModel)]="nipple">Areolas</mat-checkbox>
+            <br>
+            <mat-checkbox class="example-margin" [(ngModel)]="camouflage">Camuflajes</mat-checkbox>
+            <br>
+            <mat-checkbox class="example-margin" [(ngModel)]="pigmentation">Micro-pigmentación capilar</mat-checkbox>
+          </section>
+        </li>
+        <li>
+          Comentarios:
+          <textarea matInput style="height: 87px; border: 1px solid #000000;" required minlength="3" cdkTextareaAutosize
+            [(ngModel)]="commentary"></textarea>
+        </li>
+      </ol>
+      <table class="table">
+        
+        <thead class="table-success">
+          <tr>
+            <th scope="col">Información</th>
+            <th scope="col">Sí / No</th>
+          </tr>
+        </thead>
+        <tbody style="font-size:80%">
+          <tr>
+            <td>¿Usted tiene tatuajes?</td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="tattoos">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Es alérgica/o a medicamentos, incluyendo anestesia, xilocaína, lidocaína u otro anestésico tópico?
+            </td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="allergies">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Es diabética o hipertensa?</td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="diabetes">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Está en embarazo o lactando?</td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="pregnant">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Tiene piel keloide (cicatrización anormal)?</td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="keloide">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Tiene enfermedades contagiosas?</td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="contagious">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Tiene algún comentario adicional?</td>
+            <td>
+              <section class="example-section">
+                <mat-radio-group [(ngModel)]="adicional">
+                  <mat-radio-button class="example-margin" value="true">Sí</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="false">No</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Entre más claro el maquillaje permanente, se ve más natural pero dura menos y es más probable que necesite un
+        retoque en corto tiempo. Entre más oscuro, se ve menos natural pero dura más, y tiene menos probabilidades de
+        necesitar retoques en poco tiempo. Un retoque es un refuerzo en un área pequeña, y NO es volver a hacer el
+        trabajo, y NO es gratuito. Si usted escoge un color claro y al poco tiempo decide hacerlo más oscuro, esto se
+        considerará como un procedimiento nuevo, no un retoque, y deberá ser pagado en su totalidad.
+      </p>
+      <p class="page"><strong>De acuerdo al cuadro anterior y los comentarios adjuntos, por favor especifique sus
+          preferencias:</strong>
+      </p>
+      <ol>
+        <li>Si usted quiere maquillaje permanente de <strong>CEJAS</strong>, escoja entre estas dos opciones:
+          <ol type="a">
+            <li>Quiero cejas que duren mucho tiempo, aunque se vean oscuras durante los primeros meses.</li>
+            <li>Quiero cejas que luzcan muy naturales, aunque duren poco tiempo.</li>
+          </ol>
+        </li>
+        <li>Si usted quiere maquillaje permanente de <strong>DELINEADO DE OJOS</strong>, escoja entre estas dos
+          opciones:
+          <ol type="a">
+            <li>Quiero delineado de ojos que dure mucho tiempo, aunque se vea oscuros durante los primeros meses.</li>
+            <li>Quiero delineado de ojos que luzca muy natural, aunque dure poco tiempo.</li>
+          </ol>
+        </li>
+        <li>Si usted quiere maquillaje permanente de <strong>LABIOS</strong>, escoja entre estas dos
+          opciones:
+          <ol type="a">
+            <li>Quiero color fuerte y oscuro en mis labios, para que dure mucho tiempo, aunque se vea muy fuerte
+              durante
+              los primeros meses.</li>
+            <li>Quiero color suave y natural en mis labios, aunque dure poco tiempo.</li>
+          </ol>
+        </li>
+        <li>Si usted quiere maquillaje permanente de <strong>AREOLAS</strong>, escoja entre estas dos opciones:
+          <ol type="a">
+            <li>Quiero color fuerte y oscuro en mis areolas, para que dure mucho tiempo, aunque se vea muy fuerte
+              durante
+              los primeros meses.
+            </li>
+            <li>Quiero color suave y natural en mis areolas, aunque no dure mucho tiempo.</li>
+          </ol>
+        </li>
+      </ol>
+      <p><strong>CONDICIONES ESPECIALES PARA LA RENOVACIÓN DE MAQUILLAJE PERMANENTE ENVEJECIDO:</strong></p>
+      <p>
+        Si usted solicita la renovación de un maquillaje permanente envejecido, usualmente con un tono grisoso o
+        rojizo, sobre el cual hay que trabajar, o que tiene una forma que usted solicita cambiar, esto representa para
+        la
+        esteticista más trabajo que el de un maquillaje nuevo en piel limpia. Este es un maquillaje que requiere
+        varias sesiones hasta que se reestablece el color y la forma. En este caso usted pagaría la primera cita como
+        un
+        trabajo nuevo, el 100%. La segunda sesión (que deberá ser dentro de un mes después de hecho el procedimiento)
+        costará el 50% del precio inicial. Y la tercera sesión (que deberá ser dentro de dos meses después del primer
+        procedimiento) el costo será el 20% del costo inicial.
+      </p>
+      <ceg-signature></ceg-signature>
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dpif" [(ngModel)]="signatureDate" ngbDatepicker
+              #dpf="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="dpf.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-danger" ngbAutofocus (click)="htmlToPDF()">Guardar</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-outline-primary mb-2 mr-2" (click)="openScrollableContent(longContent)">Consentimiento
+  Informado</button>
