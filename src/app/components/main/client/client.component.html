@@ -47,7 +47,7 @@
             </div>
             <mat-form-field>
               <mat-label>Dirección</mat-label>
-              <input required minlength="3" maxlength="30" formControlName="address" matInput>
+              <input minlength="3" maxlength="30" formControlName="address" matInput>
               <mat-error><span
                   *ngIf="!profileForm.get('address').valid && profileForm.get('address').touched">{{constants.ENTRY_ERROR}}</span>
               </mat-error>
@@ -113,7 +113,7 @@
           <div class="form-client">
             <mat-form-field>
               <mat-label>Correo electrónico</mat-label>
-              <input required minlength="3" maxlength="30" formControlName="email" matInput>
+              <input minlength="3" maxlength="30" formControlName="email" matInput>
               <mat-error><span
                   *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched">{{constants.ENTRY_ERROR}}</span>
               </mat-error>

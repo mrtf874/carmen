@@ -59,11 +59,11 @@ export class ClientComponent implements OnInit {
     this.profileForm = formBuilder.group({
       names: [null, Validators.required],
       surnames: [null, Validators.required],
-      email: [null, Validators.compose([Validators.required, Validators.pattern(constants.EMAIL_PATTERN)])],
+      email: [null, Validators.compose([Validators.pattern(constants.EMAIL_PATTERN)])],
       birthday: [null, Validators.required],
       phone: [null],
       mobile: [null, Validators.required],
-      address: [null, Validators.required],
+      address: [null],
       city: [null, Validators.required],
       state: [null, Validators.required],
       code: [null, Validators.required],
