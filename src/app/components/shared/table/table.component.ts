@@ -54,8 +54,15 @@ export class TableComponent implements OnInit {
   }
 
   public downloadPDF(pdf: string) {
-    this.download.nativeElement.href = this.constant.PDF_BASE + pdf;
-    this.download.nativeElement.click();
+    if (pdf !== null && !pdf.includes('Sin PDF')) {
+      if (pdf.includes('data:application/pdf;base64,')) {
+        this.download.nativeElement.href = pdf;
+        this.download.nativeElement.click();
+      } else {
+        this.download.nativeElement.href = this.constant.PDF_BASE + pdf;
+        this.download.nativeElement.click();
+      }
+    }
   }
 
   public viewDetail(client: ClientsResponse) {

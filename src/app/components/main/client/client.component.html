@@ -166,6 +166,15 @@
               </div>
             </form>
           </div>
+          <div class="col-md-6">
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlFile2">Consentimiento informado del paciente:</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile2" accept="application/pdf"
+                  (change)="readPDF($event)">
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       <form [formGroup]="quoteForm" (ngSubmit)="onQuotesSubmit(quoteForm.value)">

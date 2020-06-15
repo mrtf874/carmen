@@ -10,6 +10,7 @@ export class ClientsRequest {
   mobile: string;
   names: string;
   notes: string;
+  pdf_signed_form: string;
   phone: string;
   picture: string;
   postal_code: number;

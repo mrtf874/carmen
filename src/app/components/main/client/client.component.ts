@@ -40,6 +40,7 @@ export class ClientComponent implements OnInit {
   public addQuote: boolean;
   public indicative: string;
   private base64textString: any;
+  private PDFbase64textString: any;
   public spinner: boolean;
 
   constructor(private formBuilder: FormBuilder, public constants: ConstantsService, private rest: RestService) {
@@ -181,6 +182,15 @@ export class ClientComponent implements OnInit {
     myReader.readAsDataURL(file);
   }
 
+  public readPDF($event): void {
+    this.savePDF($event.target);
+  }
+  private savePDF(inputValue: any): void {
+    const file: File = inputValue.files[0];
+    const myReader: FileReader = new FileReader();
+    myReader.onloadend = (e) => { this.PDFbase64textString = myReader.result; };
+    myReader.readAsDataURL(file);
+  }
   private formatDate(date) {
     const d = new Date(date);
     let month = '' + (d.getMonth() + 1);
@@ -213,6 +223,7 @@ export class ClientComponent implements OnInit {
     finalForm.mobile = form.mobile;
     finalForm.names = form.names;
     finalForm.notes = form.commentary;
+    finalForm.pdf_signed_form = this.PDFbase64textString ? this.PDFbase64textString : 'null';
     finalForm.phone = form.phone;
     finalForm.postal_code = form.code;
     finalForm.surnames = form.surnames;
